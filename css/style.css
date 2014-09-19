@@ -1,4 +1,45 @@
+/* FONTS */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+/*
+	BODY
+*/
+
 body {
 	
 	background-color:lightgrey;	
+}
+
+/*
+	HEADER
+*/
+#header {
+	
+	background-color:white;
+	
+	width:920px;
+	height:100px;
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+	margin-top:30px;
+}
+
+
+/*
+	CONTENT
+*/
+
+#content {
+	
+	background-color:white;
+	
+	width:920px;
+	min-height:400px;
+	
+	margin-left:auto;
+	margin-right:auto;
+	
+	margin-top:30px;
 }
