@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 
-	<!-- Script-->
+	<!-- Scripts -->
 	<script src="/scripts/jquery.js"></script>
 	
 </head>
@@ -23,7 +23,13 @@
 	<!-- EDIT BAR -->
 	<div id="edit-wrapper">
 		
-		<div id="edit"></div>
+		<div id="edit">
+			<ul>
+				<li class="button">Website title</li>
+				<li class="button">Page title</li>
+				<li class="button">Save</li>
+			</ul>
+		</div>
 		
 	</div>	
 	
@@ -53,7 +59,12 @@
 		</div>
 		
 		<!-- CONTENT-RIGHT -->
-		<div id="content-right"></div>
+		<div id="content-right">
+			<div class="widget">
+				<h1>Widget title</h1>
+				<p>Hier het weerbericht ofzo. <br/> Widgets zouden ook modulair kunnen</p>
+			</div>
+		</div>
 	</div>
 
 	<!-- FOOTER -->
