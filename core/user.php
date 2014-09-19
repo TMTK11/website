@@ -8,7 +8,7 @@ class user{
  	public function __construct()
  	{
  		$this->db = new database();
- 	}
+ 	}+
 
 	public function userLogin($username,$password)
  	{
@@ -21,7 +21,7 @@ class user{
  		else
  		{
  			foreach($userCheck as $usr){ $userID = $usr[id]; }
- 			
+ 			return $userID;
  			
  		}
  		
