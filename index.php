@@ -1,5 +1,5 @@
 <?php
-
+//require_once("connection.php");
 
 
 ?>
@@ -20,7 +20,13 @@
 
 <body>
 	
-	test
+	<div id="header">
+		
+	</div>
+	
+	<div id="content">
+		
+	</div>
 	
 </body>
 
