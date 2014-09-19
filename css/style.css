@@ -12,6 +12,28 @@ body {
 	
 	font-family:  'Open Sans', sans-serif;
 }
+/*
+	EDIT
+*/
+#edit-wrapper {
+	
+	width:100%;
+	height:50px;
+	
+	background-color:white;
+}
+
+#edit {
+	
+	width: 960px;
+	height: 50px;
+	
+	margin-left: auto;
+	margin-right: auto;
+	
+	background-color: grey;
+}
+
 
 /*
 	HEADER
@@ -22,7 +44,7 @@ body {
 	background:  url('/img/logos/logo_160x80.png') no-repeat #FFF;
 	background-position:  10px 10px; 
 	
-	width: 920px;
+	width: 960px;
 	height: 100px;
 	
 	margin-left: auto;
@@ -70,7 +92,7 @@ body {
 	
 	background-color: white;
 	
-	width: 880px;
+	width: 920px;
 	min-height: 400px;
 	overflow: hidden;
 	
@@ -86,12 +108,12 @@ body {
 
 #content-left {
 	float:left;
-	width:560px;
+	width:580px;
 }
 
 #content-right {
 
-	width: 300px;
+	width: 320px;
 	height:10px;
 	
 	padding:10px;
@@ -126,7 +148,7 @@ body {
 	
 	background-color: white;
 	
-	width: 880px;
+	width: 920px;
 	min-height: 10px;
 	
 	padding:20px;

@@ -20,6 +20,12 @@
 </head>
 
 <body>
+	<!-- EDIT BAR -->
+	<div id="edit-wrapper">
+		
+		<div id="edit"></div>
+		
+	</div>	
 	
 	<!-- HEADER -->
 	<div id="header">
