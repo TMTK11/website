@@ -14,11 +14,24 @@
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/style.css"/>
 
-	<!-- Script-->
+	<!-- Scripts -->
 	<script src="/scripts/jquery.js"></script>
+	
 </head>
 
 <body>
+	<!-- EDIT BAR -->
+	<div id="edit-wrapper">
+		
+		<div id="edit">
+			<ul>
+				<li class="button">Website title</li>
+				<li class="button">Page title</li>
+				<li class="button">Save</li>
+			</ul>
+		</div>
+		
+	</div>	
 	
 	<!-- HEADER -->
 	<div id="header">
@@ -46,12 +59,17 @@
 		</div>
 		
 		<!-- CONTENT-RIGHT -->
-		<div id="content-right"></div>
+		<div id="content-right">
+			<div class="widget">
+				<h1>Widget title</h1>
+				<p>Hier het weerbericht ofzo. <br/> Widgets zouden ook modulair kunnen</p>
+			</div>
+		</div>
 	</div>
 
 	<!-- FOOTER -->
 	<div id="footer">
-		<p>TMTK1-11 | Mies van der Lippe - Micheal de Jong - Oscar Druiventak | GLR 2014-2015</p>
+		<p>TMTK1-11 | Mies van der Lippe - Michael de Jong - Oscar Druiventak | GLR 2014-2015</p>
 	</div>
 	
 </body>
