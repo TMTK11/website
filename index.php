@@ -24,11 +24,13 @@
 	<div id="edit-wrapper">
 		
 		<div id="edit">
-			<ul>
-				<li class="button">Website title</li>
-				<li class="button">Page title</li>
-				<li class="button">Save</li>
-			</ul>
+			<form>
+				<ul>
+					<li class="button"><input type="text" value="Page title"/></li>
+					<li class="button">Page title</li>
+					<li class="button">Save</li>
+				</ul>
+			</form>
 		</div>
 		
 	</div>	
@@ -61,7 +63,7 @@
 		<!-- CONTENT-RIGHT -->
 		<div id="content-right">
 			<div class="widget">
-				<h1>Widget title</h1>
+				<h1>Weerbericht</h1>
 				<p>Hier het weerbericht ofzo. <br/> Widgets zouden ook modulair kunnen</p>
 			</div>
 		</div>
