@@ -24,8 +24,8 @@ if($urlArray[0] == '' || empty($urlArray[0])){
 	<title>TMTK1 - Groep 11 - CMS</title>
 	
 	<!-- Style -->
-	<link rel="stylesheet" href="css/reset.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="/css/reset.css"/>
+	<link rel="stylesheet" href="/css/style.css"/>
 
 	<!-- Scripts -->
 	<script src="/scripts/jquery.js"></script>
