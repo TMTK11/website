@@ -1,6 +1,19 @@
 <?php
 //require_once("connection.php");
 
+$url		 =	$_SERVER["REQUEST_URI"];
+$baseUrl	 =	$_SERVER["SCRIPT_NAME"];
+$url		 =	str_replace($baseUrl, '', $url);
+
+$urlArray	 =	array();
+$urlArray	 =	explode('/', $url);
+
+if($urlArray[0] == '' || empty($urlArray[0])){
+	array_shift($urlArray);
+}
+
+//print_r($urlArray);
+
 
 ?>
 <!DOCTYPE html>
@@ -65,6 +78,11 @@
 			<div class="widget">
 				<h1>Weerbericht</h1>
 				<p>Hier het weerbericht ofzo. <br/> Widgets zouden ook modulair kunnen</p>
+			</div>
+			
+			<div class="widget">
+				<h1>URL</h1>
+				<p><?php print_r($urlArray); ?></p>
 			</div>
 		</div>
 	</div>
