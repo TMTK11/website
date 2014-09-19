@@ -52,7 +52,7 @@
 
 	<!-- FOOTER -->
 	<div id="footer">
-		<p>TMTK1-11 | Mies van der Lippe - Micheal de Jong - Oscar Druiventak | GLR 2014-2015</p>
+		<p>TMTK1-11 | Mies van der Lippe - Michael de Jong - Oscar Druiventak | GLR 2014-2015</p>
 	</div>
 	
 </body>
