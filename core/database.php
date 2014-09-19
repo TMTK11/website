@@ -1,26 +1,44 @@
 <?
 
 class database{
-	
+
+	protected $PDO;
 	public $stmt;
-	public $host;
-	public $dbName;
-	public $user;
-	public $pass;
-
-
-
-
-
-
+	public $host = "localhost";
+	public $dbName ="test";
 
 	public function __construct()
 	{
-		$this->host 	= "Localhost";
-		$this->user 	= "tmtk-11";
-		$this->pass 	= "ySAbNX";
-		$this->dbName   = "dbtmtk_11";
-		$db = new PDO("mysql:");
+		$this->PDO = new PDO("mysql:host=".$this->host.";dbname=".$this->dbName.";","tmtk-11","ySAbNX");
+	}
+
+
+	public function select($query)
+	{
+		$this->stmt = $this->PDO->prepare($query);
+		$this->stmt->execute();
+		if($this->stmt)
+		{
+			$data = array();
+			while($result = $this->stmt->fetch(PDO::FETCH_ASSOC))
+			{
+				$data[] = $result;
+			}
+			return $data;
+
+		}
+	}
+
+	public function insert($query)
+	{
+		$this->stmt = $this->PDO->prepare($query);
+		$this->stmt->execute();
+		if($this->stmt)
+		{
+			return "gelukt";
+		}
+
+
 	}
 	
 
