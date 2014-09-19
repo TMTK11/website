@@ -4,8 +4,8 @@ namespace CMS\Core;
 
 class Core {
 
-	static function suckDick(){
-	
+	static function __construct(){
+	require_once("config.php");
 	
 	}
 
