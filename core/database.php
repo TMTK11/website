@@ -26,11 +26,16 @@ class database{
 			}
 			return $data;
 
+		}else
+		{
+			return false;
 		}
 	}
 
 	public function insert($query)
 	{
+		
+
 		$this->stmt = $this->PDO->prepare($query);
 		$this->stmt->execute();
 		if($this->stmt)
@@ -47,7 +52,7 @@ class database{
 
 
 }
-
+$db = new database();
 
 
 ?>
