@@ -1,4 +1,5 @@
 <?
+session_start();
 require_once("database.php");
 
 class user{
@@ -16,8 +17,11 @@ class user{
  		if($userCheck == false)
  		{
  			return false;
- 		}else
+ 		}
+ 		else
  		{
+ 			foreach($userCheck as $usr){ $userID = $usr[id]; }
+ 			
  			
  		}
  		
