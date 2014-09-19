@@ -7,7 +7,9 @@
 
 body {
 	
-	background-color:lightgrey;	
+	background-color: lightgrey;	
+	
+	font-family:  'Open Sans', sans-serif;
 }
 
 /*
@@ -15,20 +17,49 @@ body {
 */
 #header {
 	
-	background-color:white;
-	background: url('/img/logos/logo_160x80.png') no-repeat #FFF;
+	background-color: white;
+	background:  url('/img/logos/logo_160x80.png') no-repeat #FFF;
+	background-position:  10px 10px; 
 	
-	width:920px;
-	height:100px;
+	width: 920px;
+	height: 100px;
 	
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 	
-	margin-top:30px;
+	margin-top: 30px;
 	
-	background-image:
+	background-image: 
 }
 
+/* MENU */
+#header li {
+
+	display: inline-block;
+	
+	position: relative; 
+	
+	float: right;
+
+	height: 10px;
+	
+	padding: 5px;
+	padding-bottom: 10px;
+	
+	margin-right: 3px;
+}
+
+#header li: hover {
+	
+	cursor: hand;
+	color: #3FA9F5;
+}
+
+#header ul {
+
+	position: relative;
+    bottom: -70px; 
+}
 
 /*
 	CONTENT
@@ -36,13 +67,13 @@ body {
 
 #content {
 	
-	background-color:white;
+	background-color: white;
 	
-	width:920px;
-	min-height:400px;
+	width: 920px;
+	min-height: 400px;
 	
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 	
-	margin-top:30px;
+	margin-top: 30px;
 }

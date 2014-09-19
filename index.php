@@ -22,6 +22,15 @@
 	
 	<div id="header">
 		
+		
+		<ul id="menu">
+		
+			<li>knop</li>
+			<li>knop</li>
+			<li>knop</li>
+			<li>knop</li>
+			
+		</ul>
 	</div>
 	
 	<div id="content">
