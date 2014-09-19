@@ -1,6 +1,6 @@
 <?
 //test
-namespace CMS\core\Core;
+namespace CMS\Core;
 
 class Core {
 
