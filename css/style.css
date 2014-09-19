@@ -49,9 +49,9 @@ body {
 	margin-right: 3px;
 }
 
-#header li: hover {
+#header li:hover {
 	
-	cursor: hand;
+	cursor: pointer;
 	color: #3FA9F5;
 }
 
