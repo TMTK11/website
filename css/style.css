@@ -8,6 +8,7 @@
 body {
 	
 	background-color: lightgrey;	
+	background-image: url('/img/images.jpg');
 	
 	font-family:  'Open Sans', sans-serif;
 }

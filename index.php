@@ -16,6 +16,7 @@
 
 	<!-- Script-->
 	<script src="/scripts/jquery.js"></script>
+	
 </head>
 
 <body>
