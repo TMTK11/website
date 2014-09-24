@@ -1,5 +1,7 @@
 <?php
-//require_once("connection.php");
+//error_reporting(E_ERROR | E_PARSE);
+
+require_once("/controller/controller.php");
 
 $url		 =	$_SERVER["REQUEST_URI"];
 $baseUrl	 =	$_SERVER["SCRIPT_NAME"];
@@ -12,10 +14,29 @@ if($urlArray[0] == '' || empty($urlArray[0])){
 	array_shift($urlArray);
 }
 
+$controller = new controller($urlArray);
+
+$controller->start();
+
+$content = $controller->getHTML();
+
+
 //print_r($urlArray);
 
 
 ?>
+
+<?php
+	//Show the content
+	print($content);
+?>
+
+
+<?php
+
+//Should be in a view
+
+/*
 <!DOCTYPE html>
 <html>
 
@@ -95,3 +116,6 @@ if($urlArray[0] == '' || empty($urlArray[0])){
 </body>
 
 </html>
+*/
+
+?>
