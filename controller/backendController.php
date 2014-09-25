@@ -8,16 +8,18 @@ class backendController{
 	private $content;
 	private $backendView;
 
-	public function __construct($page){
+	public function __construct(){
 
-		$backendView = new backendView();
+		$this->backendView = new backendView();
 
 	}
 
 	public function getHTML(){
-
-		return $this->backendView->getHeader();
-		return $this->backendView->getContent();
+		$return = $this->backendView->getHeader();
+		$return .= $this->backendView->getContent();
+		$return .= $this->backendView->getFooter();
+		return $return;
+		
 	}
 }
 

@@ -4,10 +4,7 @@ class backendView{
 	
 	private $page;
 
-	public function __construct($page){
-
-		$this->page = $page;
-
+	public function __construct(){
 		return(true);
 
 	}
@@ -25,12 +22,12 @@ class backendView{
 			<meta name=\"description\" content=\"\">
 			<meta name=\"author\" content=\"\">
 
-			<link rel=\"stylesheet\" type=\"text/css\" href=\"lib/bootstrap/css/bootstrap.css\">
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"/view/backend/lib/bootstrap/css/bootstrap.css\">
 			
-			<link rel=\"stylesheet\" type=\"text/css\" href=\"stylesheets/theme.css\">
-			<link rel=\"stylesheet\" href=\"lib/font-awesome/css/font-awesome.css\">
+			<link rel=\"stylesheet\" type=\"text/css\" href=\"/view/backend/stylesheets/theme.css\">
+			<link rel=\"stylesheet\" href=\"/view/backend/lib/font-awesome/css/font-awesome.css\">
 
-			<script src=\"lib/jquery-1.7.2.min.js\" type=\"text/javascript\"></script>
+			<script src=\"/view/backend/lib/jquery-1.7.2.min.js\" type=\"text/javascript\"></script>
 
 			<!-- Demo page code -->
 
@@ -57,12 +54,6 @@ class backendView{
 			  <script src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>
 			<![endif]-->
 
-			<!-- Le fav and touch icons -->
-			<link rel=\"shortcut icon\" href=\"../assets/ico/favicon.ico\">
-			<link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"../assets/ico/apple-touch-icon-144-precomposed.png\">
-			<link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"../assets/ico/apple-touch-icon-114-precomposed.png\">
-			<link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"../assets/ico/apple-touch-icon-72-precomposed.png\">
-			<link rel=\"apple-touch-icon-precomposed\" href=\"../assets/ico/apple-touch-icon-57-precomposed.png\">
 		  </head>
 
 		  <!--[if lt IE 7 ]> <body class=\"ie ie6\"> <![endif]-->
@@ -128,23 +119,27 @@ class backendView{
 
 				<div class=\"container-fluid\">
 
-			<div class=\"row-fluid\">
+				<div class=\"row-fluid\">
 
-				<!--<div class=\"alert alert-info\">
-					<button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>
-					<strong>Just a quick note:</strong> Hope you like the theme!
-				</div>!-->
+					<!--<div class=\"alert alert-info\">
+						<button type=\"button\" class=\"close\" data-dismiss=\"alert\">×</button>
+						<strong>Just a quick note:</strong> Hope you like the theme!
+					</div>!-->
 
-				<div class=\"block\">
+					<div class=\"block\">
 					<a href=\"#page-stats\" class=\"block-heading\" data-toggle=\"collapse\">Latest Stats</a>
 					<div id=\"page-stats\" class=\"block-body collapse in\">
 
-						<p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
-						</div>
+					<p>AAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+					</div>
+					</div>
 					</div>
 				</div>
-			</div>
-
+		");
+	}
+	
+	public function getFooter(){
+	return("
 
 			<script src=\"lib/bootstrap/js/bootstrap.js\"></script>
 			<script type=\"text/javascript\">
@@ -155,8 +150,9 @@ class backendView{
 			</script>
 			
 		  </body>
-		</html>
-		");
+		</html>"
+		
+		);
 	}
 	
 }
