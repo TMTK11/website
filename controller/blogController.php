@@ -2,7 +2,7 @@
 
 
 
-class Blog{
+class BlogController{
 	
 	function __construct(){
 

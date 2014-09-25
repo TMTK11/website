@@ -6,6 +6,7 @@ class Controller{
 
 	private $url;
 	private $state;
+	private $pageController;
 
 	public function __construct($url){
 
@@ -26,7 +27,9 @@ class Controller{
 		if(include("/controller/" . $type . "Controller.php")){
 			
 			//Page logic here
+			$controllerName = ucfirst($type) . "Controller";
 			
+			$this->pageController = new $controllerName;
 
 			//Check if plugin is active
 
@@ -52,8 +55,10 @@ class Controller{
 			return($errorController->getHTML(array("title" => "e")));
 
 		}else{
-
-			return("Content");
+		
+			$html = $this->pageController->getHTML();
+			
+			return($html);
 		}
 
 	}
