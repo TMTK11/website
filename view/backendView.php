@@ -9,14 +9,14 @@ class backendView{
 
 	}
 	
-	public function getHeader(){
+	public function getHeader($page){
 
 		return("
 			<!DOCTYPE html>
 			<html lang=\"en\">
 			<head>
 			<meta charset=\"utf-8\">
-			<title>Admin Paneel</title>
+			<title>".$page." - Admin Paneel</title>
 			<meta content=\"IE=edge,chrome=1\" http-equiv=\"X-UA-Compatible\">
 			<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 			<meta name=\"description\" content=\"\">
@@ -91,34 +91,34 @@ class backendView{
 			<div class=\"sidebar-nav\">
 				<a href=\"#dashboard-menu\" class=\"nav-header\" data-toggle=\"collapse\"><i class=\"icon-dashboard\"></i>Dashboard</a>
 				<ul id=\"dashboard-menu\" class=\"nav nav-list collapse in\">
-					<li><a href=\"index.html\">Home</a></li>
-					<li ><a href=\"users.html\">Menu Editor</a></li>
-					<li ><a href=\"users.html\">Page Editor</a></li>
-					<li ><a href=\"user.html\">Gallerij</a></li>
-					<li ><a href=\"media.html\">Module Manager</a></li>
-					<li ><a href=\"calendar.html\">Kalender</a></li>
+					<li><a href=\"home\">Home</a></li>
+					<li ><a href=\"menu\">Menu Editor</a></li>
+					<li ><a href=\"page\">Page Editor</a></li>
+					<li ><a href=\"gallery\">Gallerij</a></li>
+					<li ><a href=\"modules\">Module Manager</a></li>
+					<li ><a href=\"calendar\">Kalender</a></li>
 					
 				</ul>
 			</div>
-
-		");
-	}
-	
-	public function getContent(){
-
-		return("
-			<div class=\"content\">
+<div class=\"content\">
 				
 				<div class=\"header\">
-				  <h1 class=\"page-title\">Dashboard</h1>
+				  <h1 class=\"page-title\">".$page."</h1>
 				</div>
 				<ul class=\"breadcrumb\">
-					<li><a href=\"index.html\">Home</a> <span class=\"divider\">/</span></li>
-					<li class=\"active\">Dashboard</li>
+					<li><a href=\"home\">Home</a> <span class=\"divider\">/</span></li>
+					<li class=\"active\">".$page."</li>
 				</ul>
 
 				<div class=\"container-fluid\">
 
+		");
+	}
+	
+	public function getContent($page){
+
+		return("
+			
 				<div class=\"row-fluid\">
 
 					<!--<div class=\"alert alert-info\">
@@ -136,6 +136,109 @@ class backendView{
 					</div>
 				</div>
 		");
+	}
+	
+	function getSettings(){
+		return("
+		
+		<div class=\"btn-toolbar\">
+    <button class=\"btn btn-primary\"><i class=\"icon-save\"></i> Save</button>
+    <a href=\"#myModal\" data-toggle=\"modal\" class=\"btn\">Delete</a>
+  <div class=\"btn-group\">
+  </div>
+</div>
+<div class=\"well\">
+    <ul class=\"nav nav-tabs\">
+      <li class=\"active\"><a href=\"#home\" data-toggle=\"tab\">Profile</a></li>
+      <li><a href=\"#profile\" data-toggle=\"tab\">Password</a></li>
+    </ul>
+    <div id=\"myTabContent\" class=\"tab-content\">
+      <div class=\"tab-pane active in\" id=\"home\">
+    <form id=\"tab\">
+        <label>Username</label>
+        <input type=\"text\" value=\"jsmith\" class=\"input-xlarge\">
+        <label>First Name</label>
+        <input type=\"text\" value=\"John\" class=\"input-xlarge\">
+        <label>Last Name</label>
+        <input type=\"text\" value=\"Smith\" class=\"input-xlarge\">
+        <label>Email</label>
+        <input type=\"text\" value=\"jsmith@yourcompany.com\" class=\"input-xlarge\">
+        <label>Address</label>
+        <textarea value=\"Smith\" rows=\"3\" class=\"input-xlarge\">
+2817 S 49th
+Apt 314
+San Jose, CA 95101
+        </textarea>
+
+    </form>
+      </div>
+      <div class=\"tab-pane fade\" id=\"profile\">
+    <form id=\"tab2\">
+        <label>New Password</label>
+        <input type=\"password\" class=\"input-xlarge\">
+        <div>
+            <button class=\"btn btn-primary\">Update</button>
+        </div>
+    </form>
+      </div>
+  </div>
+
+</div>
+		
+		
+		");
+	}
+	
+	
+	function getCalendar(){
+		return("
+	
+		<div class=\"row-fluid\">
+			<link rel='stylesheet' type='text/css' href='/view/backend/lib/fullcalendar-1.5.3/fullcalendar/fullcalendar.css' />
+			<link rel='stylesheet' type='text/css' href='/view/backend/lib/fullcalendar-1.5.3/fullcalendar/fullcalendar.print.css' media='print' />
+			<script type='text/javascript' src='/view/backend/lib/fullcalendar-1.5.3/fullcalendar/fullcalendar.min.js'></script>
+
+			<script type='text/javascript'>
+
+				$(document).ready(function() {
+
+					var date = new Date();
+					var d = date.getDate();
+					var m = date.getMonth();
+					var y = date.getFullYear();
+
+					$('#calendar').fullCalendar({
+						header: false,
+					});
+					$('#calendar').fullCalendar('next');
+
+				});
+
+			</script>
+			<style type='text/css'>
+
+				#calendar {
+					width: 100%;
+					margin: 0 auto;
+					}
+
+			</style>
+
+
+
+			<div style=\"float:right; margin-top: 1em;\">
+				<a href=\"#\" class=\"btn btn-primary\">Add</a>
+				<a href=\"#\" class=\"btn btn-danger\">Remove</a>
+				<a href=\"#\" class=\"btn btn-info\">Info</a>
+				<a href=\"#\" class=\"btn btn-success\">Success</a>
+				<a href=\"#\" class=\"btn btn-warning\">Warning</a>
+			</div>
+			<h2>Upcoming Events</h2>
+			<div id='calendar'></div>
+
+	
+		");
+	
 	}
 	
 	public function getFooter(){
