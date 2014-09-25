@@ -84,6 +84,23 @@ body {
 	color: #3FA9F5;
 }
 
+#header li a:visited {
+
+	text-decoration: none;
+	color: grey;
+}
+
+#header li a:active {
+	text-decoration: none;
+	color: grey;
+}
+
+
+#header li a:link {
+	text-decoration: none;
+	color: grey;
+}
+
 #header ul {
 
 	position: relative;

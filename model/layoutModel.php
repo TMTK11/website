@@ -10,7 +10,7 @@ class LayoutModel{
 
 	function getMenuOptions(){
 		
-		$menuOptions = array("Home"=>"/home/", "Maaike's Blog"=>"/blog/maaike/", "contact"=>"/contact/");
+		$menuOptions = array("Home"=>"/home/", "Michaels Blog"=>"/blog/michael/", "contact"=>"/contact/");
 		
 		return($menuOptions);
 	
