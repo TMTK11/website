@@ -1,6 +1,6 @@
 <?php
 
-require_once("/view/layoutView.php");
+require_once("/controller/layoutController.php");
 
 class ErrorView{
 	
@@ -22,7 +22,7 @@ class ErrorView{
 		
 		$details = array("contentLeft"=>$message, "title"=>$title);
 		
-		$layout	 =	new LayoutView($details);
+		$layout	 =	new LayoutController($details);
 		
 		return($layout->getHTML());
 	}

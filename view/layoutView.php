@@ -2,26 +2,38 @@
 
 class LayoutView{
 	
-	private $content;
-
+	private $title;
+	private $menuOptions;
+	
 	public function __construct($content){
-
-		$this->content = $content;
+		
+		//Get title and menuoptions from content variable
+		$this->title		 = (isset($content['title']) ? $content['title'] : "Geen unieke titel");
+		$this->menuOptions	 = $content['menuOptions'];
+		
+		//Save as object variable
+		$this->content		 = $content;
 
 		return(true);
-
 	}
 
 	public function getHTML(){
 		
-		$content	 = 	$this->content;
+		//Create menu
+		$navMenu = "<ul id=\"menu\">";
+		foreach($this->menuOptions as $key => $value) {
+			//blahahah
+			$navMenu .= "<li><a href='" . $value . "'>" . $key . "</a></li>";
+		}
+		$navMenu .= "</ul>";
 		
+		//Page HTML
 		$html	 =	"<!DOCTYPE html>
 	<html>
 
 	<head>
 		<!-- Title -->
-		<title>" . $content['title'] . " | TMTK1 - Groep 11 - CMS</title>
+		<title>" . $this->title . " | TMTK1 - Groep 11 - CMS</title>
 		
 		<!-- Style -->
 		<link rel=\"stylesheet\" href=\"/css/reset.css\"/>
@@ -52,15 +64,7 @@ class LayoutView{
 		<div id=\"header\">
 			
 			<!-- MENU -->
-			<ul id=\"menu\">
-			
-				<li>Home</li>
-				<li>Modules</li>
-				<li>Blog</li>
-				<li>Account</li>
-				<li>Admin Panel</li>
-				
-			</ul>
+			" . $navMenu . "
 		</div>
 		
 		
@@ -69,7 +73,7 @@ class LayoutView{
 			
 			<!-- CONTENT-LEFT -->
 			<div id=\"content-left\">
-				" . $content['contentLeft'] . "
+				" . $this->content['contentLeft'] . "
 			</div>
 			
 			<!-- CONTENT-RIGHT -->
