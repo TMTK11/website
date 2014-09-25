@@ -29,7 +29,7 @@ class Controller{
 			//Page logic here
 			$controllerName = ucfirst($type) . "Controller";
 			
-			$this->pageController = new $controllerName;
+			$this->pageController = new $controllerName($this->url);
 
 			//Check if plugin is active
 
