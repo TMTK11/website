@@ -1,6 +1,9 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
 
+define("DS", DIRECTORY_SEPARATOR);
+define("ROOT", dirname(__FILE__));
+
 require_once("/controller/controller.php");
 
 $url		 =	$_SERVER["REQUEST_URI"];
