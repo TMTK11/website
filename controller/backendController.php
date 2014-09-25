@@ -16,7 +16,8 @@ class backendController{
 
 	public function getHTML(){
 
-		return $this->backendView->getHTML();
+		return $this->backendView->getHeader();
+		return $this->backendView->getContent();
 	}
 }
 
