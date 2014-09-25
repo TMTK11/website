@@ -47,7 +47,7 @@ class Controller{
 
 		if("DONE" != $this->state){
 
-			$errorController = new errorController(array("title" => "Fout!"));
+			$errorController = new errorController(array("title" => "Fout!", "message"=>"Pagina kon niet worden gevonden" ));
 
 			return($errorController->getHTML(array("title" => "e")));
 
