@@ -1,7 +1,7 @@
 <?php
 
-require_once('view/mediaView');
-class media{
+require_once("/view/layoutView.php");
+class MediaController{
 
 	public $type;
 	public $name;
@@ -25,8 +25,15 @@ class media{
 
 	public function getHTML()
 	{
+		$message = "<h1>Media</h1>";
+	
+		$title = "Media";
 
+		$details = array("contentLeft"=>$message, "title"=>$title);
 
+		$layout = new layoutView($details);
+
+		return ($layout->getHTML());
 
 	}
 
