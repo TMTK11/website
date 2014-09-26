@@ -342,7 +342,7 @@ San Jose, CA 95101
 	public function getFooter(){
 	return("
 
-			<script src=\"lib/bootstrap/js/bootstrap.js\"></script>
+			<script src=\"/view/backend/lib/bootstrap/js/bootstrap.js\"></script>
 			<script type=\"text/javascript\">
 				$(\"[rel=tooltip]\").tooltip();
 				$(function() {

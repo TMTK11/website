@@ -1,0 +1,3 @@
+flowchart verbeteren - verschil frontend en backend + modules uitwerken.
+database ontwerp.
+grafisch ontwerp.
