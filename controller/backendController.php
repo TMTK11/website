@@ -33,6 +33,7 @@ class backendController{
 		case "page":
 			$pagename = "Pagina Editor";
 			$return = $this->backendView->getHeader($pagename);
+			$return .= $this->backendView->getPageList();
 			break;
 		case "gallery":
 			$pagename = "Media Gallerij";

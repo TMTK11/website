@@ -236,6 +236,49 @@ class backendView{
 		");
 	}
 	
+	function getHome(){
+		return("
+		
+		
+		");
+	}
+	
+	function getPageList(){
+		return("
+			<div class=\"btn-toolbar\">
+				<button class=\"btn btn-primary\"><i class=\"icon-plus\"></i> Add Page</button>
+			  <div class=\"btn-group\">
+			  </div>
+			</div>
+			<div class=\"well\">
+				<table class=\"table\">
+				  <thead>
+					<tr>
+					  <th>#</th>
+					  <th>Pagina</th>
+					  <th>Content</th>
+					  <th>Gepubliceerd Op</th>
+					  <th style=\"width: 26px;\"></th>
+					</tr>
+				  </thead>
+				  <tbody>
+					<tr>
+					<td>1</td>
+					  <td>Home</td>
+					  <td>Nog niks</td>
+					  <td>26-9-2014</td>
+					  <td>
+						  <a href=\"editpage\"><i class=\"icon-pencil\"></i></a>
+						  <a href=\"#remove\" role=\"button\" data-toggle=\"modal\"><i class=\"icon-remove\"></i></a>
+					  </td>
+					</tr>
+				  </tbody>
+				</table>
+			</div>
+		
+		");
+	}
+	
 	function getSettings(){
 		return("
 		
