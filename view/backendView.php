@@ -183,7 +183,7 @@ class backendView{
 							</li>
 							
 						</ul>
-						<a class=\"brand\" href=\"index.html\"><span class=\"first\">Your</span> <span class=\"second\">Company</span></a>
+						<a class=\"brand\" href=\"index.html\"><span class=\"second\">CMS</span></a>
 				</div>
 			</div>
 			<div class=\"sidebar-nav\">
@@ -236,9 +236,40 @@ class backendView{
 		");
 	}
 	
-	function getHome(){
+	function getGallery(){
 		return("
-		
+		<div class=\"btn-toolbar\">
+				<button class=\"btn btn-primary\"><i class=\"icon-plus\"></i> Add Media</button>
+			  <div class=\"btn-group\">
+			  </div>
+		</div>
+		<div class=\"block\">
+        <p class=\"block-heading\">Media</p>
+        <div class=\"block-body gallery\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+                <img src=\"/view/backend/images/140x140.gif\" class=\"img-polaroid\">
+            
+            <div class=\"clearfix\"></div>
+        </div>
+		</div>
 		
 		");
 	}

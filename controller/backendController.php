@@ -38,6 +38,7 @@ class backendController{
 		case "gallery":
 			$pagename = "Media Gallerij";
 			$return = $this->backendView->getHeader($pagename);
+			$return .= $this->backendView->getGallery();
 			break;
 		case "modules":
 			$pagename = "Module Manager";
@@ -52,6 +53,11 @@ class backendController{
 			$pagename = "Instellingen";
 			$return = $this->backendView->getHeader($pagename);
 			$return .= $this->backendView->getSettings();
+			break;
+		case "editpage":
+			$pagename = "Edit Page";
+			$return = $this->backendView->getHeader($pagename);
+			//$return .= $this->backendView->getEditPage();
 			break;
 		default:
 			$pagename = "404";
