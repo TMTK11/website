@@ -183,7 +183,7 @@ class backendView{
 							</li>
 							
 						</ul>
-						<a class=\"brand\" href=\"index.html\"><span class=\"second\">CMS</span></a>
+						<a class=\"brand\" href=\"index.html\"><span class=\"second\">CMS</span></a>
 				</div>
 			</div>
 			<div class=\"sidebar-nav\">
