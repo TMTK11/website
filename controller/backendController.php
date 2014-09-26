@@ -16,11 +16,15 @@ class backendController{
 	}
 
 	public function getHTML(){
+	
 	switch($this->url[1]){
+		case "login":
+			$pagename = "Home";
+			$return = $this->backendView->getLogin();
+			break;
 		case "home":
 			$pagename = "Home";
 			$return = $this->backendView->getHeader($pagename);
-			
 			break;
 		case "menu":
 			$pagename = "Module Manager";
