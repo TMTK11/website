@@ -27,7 +27,7 @@ class backendController{
 			$return = $this->backendView->getHeader($pagename);
 			break;
 		case "menu":
-			$pagename = "Module Manager";
+			$pagename = "Menu Editor";
 			$return = $this->backendView->getHeader($pagename);
 			break;
 		case "page":
