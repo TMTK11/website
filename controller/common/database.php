@@ -1,4 +1,4 @@
-<?
+<?php
 
 class database{
 
@@ -26,7 +26,8 @@ class database{
 			}
 			return $data;
 
-		}else
+		}
+		else
 		{
 			return false;
 		}
@@ -52,7 +53,7 @@ class database{
 
 
 }
-$db = new database();
+
 
 
 ?>

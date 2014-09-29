@@ -23,10 +23,12 @@ class LayoutController{
 	
 	function getHTML(){
 	
-		$layoutView		 =	new LayoutView($this->content);
+		$layoutView		=	new LayoutView($this->content);
 		
 		return($layoutView->getHTML());
 	}
+
+
 	
 }
 

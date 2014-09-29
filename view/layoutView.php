@@ -4,7 +4,7 @@ class LayoutView{
 	
 	private $title;
 	private $menuOptions;
-	
+
 	public function __construct($content){
 		
 		//Get title and menuoptions from content variable
@@ -74,6 +74,7 @@ class LayoutView{
 			<!-- CONTENT-LEFT -->
 			<div id=\"content-left\">
 				" . $this->content['contentLeft'] . "
+				".  $this->content['Login'] . "
 			</div>
 			
 			<!-- CONTENT-RIGHT -->
@@ -101,6 +102,9 @@ class LayoutView{
 		
 		return($html);
 	}
+
+
+
 }
 
 ?>
