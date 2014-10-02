@@ -1,5 +1,5 @@
 <?php
-require_once('/controller/common/database.php');
+require_once('/../controller/common/database.php');
 class loginModel{
 
 	protected $db;

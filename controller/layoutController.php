@@ -6,6 +6,7 @@ require_once("/view/layoutView.php");
 class LayoutController{
 	
 	private $content;
+
 	
 	function __construct($content){
 		
@@ -18,8 +19,11 @@ class LayoutController{
 		$content['menuOptions'] = $menuOptions;
 		
 		$this->content	 = $content;
+	
+		
 		
 	}
+
 	
 	function getHTML(){
 	
@@ -27,6 +31,7 @@ class LayoutController{
 		
 		return($layoutView->getHTML());
 	}
+
 }
 
 

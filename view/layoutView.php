@@ -1,10 +1,10 @@
 <?php
-
+session_start();
 class LayoutView{
 	
 	private $title;
 	private $menuOptions;
-
+	
 	public function __construct($content){
 		
 		//Get title and menuoptions from content variable
@@ -18,7 +18,8 @@ class LayoutView{
 	}
 
 	public function getHTML(){
-		
+		//check login
+		$form = $this->checkuser();
 		//Create menu
 		$navMenu = "<ul id=\"menu\">";
 		foreach($this->menuOptions as $key => $value) {
@@ -49,15 +50,10 @@ class LayoutView{
 		<div id=\"edit-wrapper\">
 			
 			<div id=\"edit\">
-				<form>
-					<ul>
-						<li class=\"button\"><input type=\"text\" value=\"Page title\"/></li>
-						<li class=\"button\">Page title</li>
-						<li class=\"button\">Save</li>
-					</ul>
-				</form>
+	
+				".$form."
 			</div>
-			
+
 		</div>	
 		
 		<!-- HEADER -->
@@ -74,6 +70,7 @@ class LayoutView{
 			<!-- CONTENT-LEFT -->
 			<div id=\"content-left\">
 				" . $this->content['contentLeft'] . "
+
 	
 			</div>
 			
@@ -96,6 +93,27 @@ class LayoutView{
 	</html>";
 		
 		return($html);
+	}
+
+	public function checkuser()
+	{
+		if($_SESSION['user'])
+		{
+				$html = "<a href='/controller/common/logout.php'>Logout</a>";
+
+			return $html;
+			
+		}else{
+
+			$html = "
+				<form id='formlogin' method='POST' action='/controller/common/checkLogin.php'>
+				<input type='text' name='username' placeholder='E-mail'/>
+				<input type='password' name='password' placeholder='Password'/>
+				<input type='submit' name='checklogin' value='Login'/>
+				</form>";
+
+			return $html;
+		}
 	}
 
 
