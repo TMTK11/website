@@ -2,16 +2,14 @@
 
 require_once("/view/errorView.php");
 
-
 class errorController{
 
-	private $content;
-	private $errorView;
+	private $errorView;	//Errorview Class
 
 	public function __construct($details){
 
+		//Create new errorview with given details
 		$this->errorView = new errorView($details);
-
 	}
 
 	public function getHTML(){

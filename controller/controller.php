@@ -5,9 +5,9 @@ require_once("/controller/errorController.php");
 class Controller{
 	
 	//Controller vars
-	private $url;
-	private $state;
-	private $pageController;
+	private $url;				//Requested URL, cleaned and in array
+	private $state;				//Current state of the controller
+	private $pageController;	//The pagecontroller as requested by user
 
 	//Constructor
 	public function __construct($url){
@@ -32,19 +32,18 @@ class Controller{
 		//Check if specified controller exists
 		if(in_array($type . "Controller.php", $controllers)){
 			
+			//Get and create controller
 			require_once($type . "Controller.php");
-			
-			//Page logic here
+
 			$controllerName = ucfirst($type) . "Controller";
-			
 			$this->pageController = new $controllerName($this->url);
 
-			//Set the state
+			//Set the state for the master controller
 			$this->state = "DONE";
 
 		}else{
 
-			//Error logic here
+			//Set the state for the master controller
 			$this->state = "NOT_EXIST";
 
 		}
@@ -55,18 +54,18 @@ class Controller{
 	public function getHTML(){
 
 		//Check for state
-		if("DONE" != $this->state){
+		if("DONE" == $this->state){
+			
+			//Gets HTML from pagecontroller and return it to index.php
+			$html = $this->pageController->getHTML();
+			
+			return($html);
+		}else{
 
 			//Get errorpage from errorcontroller
 			$errorController = new errorController(array("title" => "Fout!", "message"=>"Pagina kon niet worden gevonden" ));
 
 			return($errorController->getHTML());
-
-		}else{
-			//Gets HTML from pagecontroller and return it to index.php
-			$html = $this->pageController->getHTML();
-			
-			return($html);
 		}
 
 	}
