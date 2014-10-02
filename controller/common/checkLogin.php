@@ -20,7 +20,7 @@ $check = new loginModel();
 				else
 				{
 				
-					header('location:/account/?msg=Verkeerd');
+					header('location:/home/msg/verkeerd');
 				}
 
 			}
