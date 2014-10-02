@@ -166,7 +166,7 @@ class backendView{
 				<div class=\"navbar-inner\">
 						<ul class=\"nav pull-right\">
 							
-							<li><a href=\"settings\" class=\"hidden-phone visible-tablet visible-desktop\" role=\"button\">Settings</a></li>
+							<li><a href=\"/backend/settings\" class=\"hidden-phone visible-tablet visible-desktop\" role=\"button\">Settings</a></li>
 							<li id=\"fat-menu\" class=\"dropdown\">
 								<a href=\"#\" role=\"button\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
 									<i class=\"icon-user\"></i> Jack Smith
@@ -189,12 +189,12 @@ class backendView{
 			<div class=\"sidebar-nav\">
 				<a href=\"#dashboard-menu\" class=\"nav-header\" data-toggle=\"collapse\"><i class=\"icon-dashboard\"></i>Dashboard</a>
 				<ul id=\"dashboard-menu\" class=\"nav nav-list collapse in\">
-					<li><a href=\"home\">Home</a></li>
-					<li ><a href=\"menu\">Menu Editor</a></li>
-					<li ><a href=\"page\">Page Editor</a></li>
-					<li ><a href=\"gallery\">Gallerij</a></li>
-					<li ><a href=\"modules\">Module Manager</a></li>
-					<li ><a href=\"calendar\">Kalender</a></li>
+					<li><a href=\"/backend/home\">Home</a></li>
+					<li ><a href=\"/backend/menu\">Menu Editor</a></li>
+					<li ><a href=\"/backend/page\">Page Editor</a></li>
+					<li ><a href=\"/backend/gallery\">Gallerij</a></li>
+					<li ><a href=\"/backend/modules\">Module Manager</a></li>
+					<li ><a href=\"/backend/calendar\">Kalender</a></li>
 					
 				</ul>
 			</div>
