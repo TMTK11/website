@@ -14,9 +14,9 @@ class backendModel{
 	protected $iswatermerk = false;
 	protected $watermerk = "watermerk.png";
 	
-	protected $dir = "database/media/originals/";
-	protected $thumbdir = "database/media/thumbnails/";
-	protected $watermerkdir = "database/media/watermerk/";
+	protected $dir = "../database/media/originals/";
+	protected $thumbdir = "../database/media/thumbnails/";
+	protected $watermerkdir = "../database/media/watermerk/";
 	
 	public function __construct($file){
 		$this->db = new database();
