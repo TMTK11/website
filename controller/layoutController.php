@@ -27,9 +27,6 @@ class LayoutController{
 		
 		return($layoutView->getHTML());
 	}
-
-
-	
 }
 
 

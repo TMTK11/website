@@ -83,11 +83,6 @@ class LayoutView{
 					<h1>Weerbericht</h1>
 					<p>Hier het weerbericht ofzo. <br/> Widgets zouden ook modulair kunnen</p>
 				</div>
-				
-				<div class=\"widget\">
-					<h1>URL</h1>
-					<p></p>
-				</div>
 			</div>
 		</div>
 

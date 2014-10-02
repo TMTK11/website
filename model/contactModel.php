@@ -29,8 +29,6 @@ class ContactModel{
 			print("mail not sent");
 
 	}
-
-
 }
 
 ?>

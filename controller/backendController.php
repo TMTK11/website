@@ -79,14 +79,8 @@ class backendController{
 
 	public function checkuser()
 	{
-
-		if($_SESSION['user'])
-		{
-
-		}else{
-			
+		if(!$_SESSION['user'])
 			header('location:/account');
-		}
 	}
 }
 
