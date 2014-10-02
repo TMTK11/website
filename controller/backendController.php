@@ -1,7 +1,7 @@
 <?php
 
 require_once("/view/backendView.php");
-
+require_once("/model/backendModel.php");
 
 class backendController{
 
@@ -30,10 +30,15 @@ class backendController{
 			$pagename = "Menu Editor";
 			$return = $this->backendView->getHeader($pagename);
 			break;
-		case "page":
+		case "pages":
 			$pagename = "Pagina Editor";
 			$return = $this->backendView->getHeader($pagename);
 			$return .= $this->backendView->getPageList();
+			break;
+		case "page":
+			$pagename = "Pagina Editor";
+			$return = $this->backendView->getHeader($pagename);
+			$return .= $this->backendView->getPageEditor();
 			break;
 		case "gallery":
 			$pagename = "Media Gallerij";

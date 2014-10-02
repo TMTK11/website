@@ -191,7 +191,7 @@ class backendView{
 				<ul id=\"dashboard-menu\" class=\"nav nav-list collapse in\">
 					<li><a href=\"/backend/home\">Home</a></li>
 					<li ><a href=\"/backend/menu\">Menu Editor</a></li>
-					<li ><a href=\"/backend/page\">Page Editor</a></li>
+					<li ><a href=\"/backend/pages\">Page Editor</a></li>
 					<li ><a href=\"/backend/gallery\">Gallerij</a></li>
 					<li ><a href=\"/backend/modules\">Module Manager</a></li>
 					<li ><a href=\"/backend/calendar\">Kalender</a></li>
@@ -239,7 +239,11 @@ class backendView{
 	function getGallery(){
 		return("
 		<div class=\"btn-toolbar\">
-				<button class=\"btn btn-primary\"><i class=\"icon-plus\"></i> Add Media</button>
+				<form method='post' enctype='multipart/form-data'>
+					<input type='file' name='bestand' style='display:none;'/>
+					<input type='submit' class=\"btn btn-primary\" name='upload' value='+ Add Media'/>
+				</form>
+				
 			  <div class=\"btn-group\">
 			  </div>
 		</div>
@@ -361,6 +365,41 @@ San Jose, CA 95101
 		");
 	}
 	
+	
+	function getPageEditor(){
+		return("
+		
+		<div class=\"btn-toolbar\">
+    <button class=\"btn btn-primary\"><i class=\"icon-save\"></i> Save</button>
+    <a href=\"#myModal\" data-toggle=\"modal\" class=\"btn\">Delete</a>
+  <div class=\"btn-group\">
+  </div>
+</div>
+<div class=\"well\">
+    <div id=\"myTabContent\" class=\"tab-content\">
+      <div class=\"tab-pane active in\" id=\"home\">
+    <form id=\"tab\">
+        <label>Content</label>
+        <textarea value=\"Smith\" rows=\"16\" class=\"input-xlarge\"></textarea>
+
+    </form>
+      </div>
+      <div class=\"tab-pane fade\" id=\"profile\">
+    <form id=\"tab2\">
+        <label>New Password</label>
+        <input type=\"password\" class=\"input-xlarge\">
+        <div>
+            <button class=\"btn btn-primary\">Update</button>
+        </div>
+    </form>
+      </div>
+  </div>
+
+</div>
+		
+		
+		");
+	}
 	
 	function getCalendar(){
 		return("
