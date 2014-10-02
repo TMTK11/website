@@ -11,9 +11,7 @@ class loginModel{
 
 	public function checkUser($username,$password)
 	{
-		$sql = "SELECT * FROM `username` WHERE email='$username' AND password='$password'";
-		return ($this->db->select($sql));
-
+		return ($this->db->checkUserLogin($username,$password));
 	}
 
 

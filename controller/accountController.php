@@ -8,9 +8,9 @@ class accountController{
 
 	public function getHTML()
 	{
-		$message = "<h1>Account</h1>";
-		$login = "
-		<form method='POST' action='/checkLogin.php'>
+		$accountContent = "<h1>Account</h1>";
+		$accountContent .= "
+		<form name='login' method='POST' action='/checkLogin.php'>
 		<input type='text' name='username' placeholder='E-mail'/>
 		<input type='password' name='password' placeholder='Password'/>
 		<input type='submit' name='checklogin' value='Login'/>
@@ -18,7 +18,7 @@ class accountController{
 		";
 		$title = "Account";
 	
-		$details = array("contentLeft"=>$message,"title"=>$title, "Login" => $login);
+		$details = array("contentLeft"=>$accountContent,"title"=>$title);
 		$layout = new layoutController($details);
 
 		return($layout->getHTML());

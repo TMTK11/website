@@ -1,21 +1,31 @@
 <?php
+session_start();
 require_once("/model/loginModel.php");
 
 if(isset($_POST))
 {
 	
+$check = new loginModel();
 
 		try{
 
-			$check = new loginModel();
+				$userId = $check->checkUser($_POST['username'],sha1($_POST['password']));
+			
+				if($userId != false)
+				{
+					$_SESSION['user'] = $userId;
 
-			$data = $check->checkUser($_POST['username'],$_POST['password']);
-			print_r($data);
+				}
+				else
+				{
+					echo "false";
+				}
 
-		}catch (PDOException $e)
-		{
+			}
+			catch (PDOException $e)
+			{
 
-		}
+			}
 }else{
 
 }

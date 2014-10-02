@@ -74,7 +74,7 @@ class LayoutView{
 			<!-- CONTENT-LEFT -->
 			<div id=\"content-left\">
 				" . $this->content['contentLeft'] . "
-				".  $this->content['Login'] . "
+	
 			</div>
 			
 			<!-- CONTENT-RIGHT -->

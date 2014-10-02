@@ -4,8 +4,8 @@ class database{
 
 	protected $PDO;
 	public $stmt;
-	public $host = "localhost";
-	public $dbName ="test";
+	public $host = "145.118.4.13";
+	public $dbName ="dbtmtk_11";
 
 	public function __construct()
 	{
@@ -13,23 +13,26 @@ class database{
 	}
 
 
-	public function select($query)
+	public function checkUserLogin($username,$password)
 	{
-		$this->stmt = $this->PDO->prepare($query);
+		$sql = "SELECT * FROM `users` WHERE email='$username' AND password='$password'";
+		$this->stmt = $this->PDO->prepare($sql);
 		$this->stmt->execute();
-		if($this->stmt)
+		if($this->stmt->rowCount() > 0)
 		{
-			$data = array();
+			
+		
 			while($result = $this->stmt->fetch(PDO::FETCH_ASSOC))
 			{
-				$data[] = $result;
+				$data = $result['id'];
 			}
-			return $data;
+			
+			return ($data);
 
 		}
 		else
 		{
-			return false;
+			return (false);
 		}
 	}
 
