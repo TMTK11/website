@@ -14,11 +14,13 @@ $check = new loginModel();
 				if($userId != false)
 				{
 					$_SESSION['user'] = $userId;
+					header('location:/backend');
 
 				}
 				else
 				{
-					echo "false";
+				
+					header('location:/account/?msg=Verkeerd');
 				}
 
 			}

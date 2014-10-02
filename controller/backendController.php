@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("/view/backendView.php");
 require_once("/model/backendModel.php");
 
@@ -13,6 +13,7 @@ class backendController{
 
 		$this->backendView = new backendView();
 		$this->url = $url;
+		$this->checkuser();
 	}
 
 	public function getHTML(){
@@ -74,6 +75,18 @@ class backendController{
 		$return .= $this->backendView->getFooter();
 		return $return;
 		
+	}
+
+	public function checkuser()
+	{
+
+		if($_SESSION['user'])
+		{
+
+		}else{
+			
+			header('location:/account');
+		}
 	}
 }
 

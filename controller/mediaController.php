@@ -13,15 +13,7 @@ class MediaController{
 
 	}
 
-	public function setMedia()
-	{
-		
-	}
 
-	public function getMedia(){
-
-
-	}
 
 	public function getHTML()
 	{
