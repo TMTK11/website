@@ -2,7 +2,7 @@
 
 require_once("/controller/layoutController.php");
 
-class BlogController{
+class HomeController{
 	
 	function __construct(){
 
@@ -11,9 +11,9 @@ class BlogController{
 	
 	public function getHTML(){
 		
-		$message	 =	"<h1>Blog</h1>";
-		$message	.=	"<p>Welkom op de placeholder blog!</p>";
-		$title		 =	"Blog ";
+		$message	 =	"<h1>Home</h1>";
+		$message	.=	"<p>Welkom op de pagina voor TMTK1-11. Hier maken wij ons MVC CMS.</p>";
+		$title		 =	"Home ";
 		
 		$details = array("contentLeft"=>$message, "title"=>$title);
 		
