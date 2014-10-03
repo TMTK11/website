@@ -97,7 +97,7 @@ class LayoutView{
 
 	public function checkuser()
 	{
-		if($_SESSION['user'])
+		if(isset($_SESSION['user']))
 		{
 				$html = "<a href='/controller/common/logout.php'>Logout</a>";
 

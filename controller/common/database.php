@@ -46,6 +46,26 @@ class Database{
 		}
 	}
 
+	public function getUserInformation($id)
+	{
+		$sql = "SELECT * FROM `users` WHERE id='$id'";
+		$this->stmt = $this->PDO->prepare($sql);
+		$this->stmt->execute();
+		if($this->stmt->rowCount() > 0)
+		{
+			
+		
+			while($result = $this->stmt->fetch(PDO::FETCH_ASSOC))
+			{
+				$data = $result;
+			}
+			
+			return ($data);
+
+		}
+	
+	}
+
 	public function insert($query)
 	{
 		

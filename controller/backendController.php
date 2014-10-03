@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require_once("/view/backendView.php");
 require_once("/model/backendModel.php");
 
@@ -8,12 +8,15 @@ class backendController{
 	private $content;
 	private $backendView;
 	private $url;
+	public $model;
 
 	public function __construct($url){
 
 		$this->backendView = new backendView();
 		$this->url = $url;
 		$this->checkuser();
+		$this->model = new backendModel();
+
 	}
 
 	public function getHTML(){
@@ -79,8 +82,13 @@ class backendController{
 
 	public function checkuser()
 	{
-		if(!$_SESSION['user'])
-			header('location:/account');
+		if(!$_SESSION['user']){
+			header('location:/home');
+		}else{
+
+			$this->model->getUserInfo($_SESSION['user']);
+			
+		}
 	}
 }
 

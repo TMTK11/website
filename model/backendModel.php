@@ -132,6 +132,11 @@ class backendModel{
 		}
 		return $ip;
 	}
+
+	public function getUserInfo($id)
+	{
+		return($this->db->getUserInformation($id));
+	}
 }
 
 ?>
