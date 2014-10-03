@@ -15,9 +15,9 @@ class Database{
 	public function getExampleData(){
 		
 		$array	 =	array(
-			0	 =	array("Username" => "Mies", "Email" => "Mies@example.com"),
-			1	 =	array("Username" => "Oscar", "Email" => "Oscar@example.com"),
-			2	 =	array("Username" => "Michael", "Email" => "Michael@example.com"),
+			0	=>	array("Username" => "Mies", "Email" => "Mies@example.com"),
+			1	=>	array("Username" => "Oscar", "Email" => "Oscar@example.com"),
+			2	=>	array("Username" => "Michael", "Email" => "Michael@example.com"),
 		);
 		
 		return($array);
