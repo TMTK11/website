@@ -4,12 +4,15 @@ class Database{
 
 	protected $PDO;
 	public $stmt;
-	public $host = "145.118.4.13";
-	public $dbName ="dbtmtk_11";
+	private $host = "145.118.4.13";
+	private $dbName ="dbtmtk_11";
+	private $dbUsername = "tmtk-11";
+	private $dbPassword= "ySAbNX";
+
 
 	public function __construct()
 	{
-		$this->PDO = new PDO("mysql:host=".$this->host.";dbname=".$this->dbName.";","tmtk-11","ySAbNX");
+		$this->PDO = new PDO("mysql:host=".$this->host.";dbname=".$this->dbName.";",$this->dbUsername,$this->dbPassword);
 	}
 
 	public function getExampleData(){
@@ -74,7 +77,7 @@ class Database{
 		$this->stmt->execute();
 		if($this->stmt)
 		{
-			return "gelukt";
+			return true;
 		}
 
 
