@@ -1,13 +1,13 @@
 <?php
 session_start();
-require_once("../../model/loginModel.php");
+require_once("../../model/UserModel.php");
 
 if(isset($_POST))
 {
 	
-$check = new loginModel();
+$check = new UserModel();
 
-		try{
+	
 
 				$userId = $check->checkUser($_POST['username'],sha1($_POST['password']));
 			
@@ -23,11 +23,8 @@ $check = new loginModel();
 					header('location:/home/msg/verkeerd');
 				}
 
-			}
-			catch (PDOException $e)
-			{
-
-			}
+			
+	
 }else{
 
 }

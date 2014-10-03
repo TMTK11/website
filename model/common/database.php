@@ -4,12 +4,15 @@ class Database{
 
 	protected $PDO;
 	public $stmt;
-	public $host = "145.118.4.13";
-	public $dbName ="dbtmtk_11";
+	private $host = "145.118.4.13";
+	private $dbName ="dbtmtk_11";
+	private $dbUsername = "tmtk-11";
+	private $dbPassword= "ySAbNX";
+
 
 	public function __construct()
 	{
-		$this->PDO = new PDO("mysql:host=".$this->host.";dbname=".$this->dbName.";","tmtk-11","ySAbNX");
+		$this->PDO = new PDO("mysql:host=".$this->host.";dbname=".$this->dbName.";",$this->dbUsername,$this->dbPassword);
 	}
 
 	public function getExampleData(){
@@ -17,7 +20,7 @@ class Database{
 		$array	 =	array(
 			0	=>	array("Username" => "Mies", "Email" => "Mies@example.com"),
 			1	=>	array("Username" => "Oscar", "Email" => "Oscar@example.com"),
-			2	=>	array("Username" => "Michael", "Email" => "Michael@example.com")
+			2	=>	array("Username" => "Michael", "Email" => "Michael@example.com"),
 		);
 		
 		return($array);
@@ -46,6 +49,26 @@ class Database{
 		}
 	}
 
+	public function getUserInformation($id)
+	{
+		$sql = "SELECT * FROM `users` WHERE id='$id'";
+		$this->stmt = $this->PDO->prepare($sql);
+		$this->stmt->execute();
+		if($this->stmt->rowCount() > 0)
+		{
+			
+		
+			while($result = $this->stmt->fetch(PDO::FETCH_ASSOC))
+			{
+				$data = $result;
+			}
+			
+			return ($data);
+
+		}
+	
+	}
+
 	public function insert($query)
 	{
 		
@@ -54,7 +77,7 @@ class Database{
 		$this->stmt->execute();
 		if($this->stmt)
 		{
-			return "gelukt";
+			return true;
 		}
 
 
