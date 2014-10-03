@@ -28,7 +28,7 @@ class Controller{
 		
 		unset($controllers['0']); //Removes .
 		unset($controllers['1']); //Removes ..
-		
+				
 		//Check if specified controller exists
 		if(in_array($type . "Controller.php", $controllers)){
 			
