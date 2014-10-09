@@ -2,7 +2,7 @@
 require_once('/../controller/common/database.php');
 class UserModel{
 
-	protected $db;
+	private $db;
 
 	public function __construct()
 	{
@@ -12,6 +12,11 @@ class UserModel{
 	public function checkUser($username,$password)
 	{
 		return ($this->db->checkUserLogin($username,$password));
+	}
+
+	public function changeSettings($id,$firstname,$lastname,$email,$password)
+	{
+		return ($this->db->changeSettings($id,$firstname,$lastname,$email,$password));
 	}
 
 

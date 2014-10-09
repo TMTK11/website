@@ -9,11 +9,13 @@ $check = new UserModel();
 
 	
 
-				$userId = $check->checkUser($_POST['username'],sha1($_POST['password']));
-			
-				if($userId != false)
+				$user = $check->checkUser($_POST['username'],hash('sha256',$_POST['password']));
+				$userinfo = array();
+				if($user != false)
 				{
-					$_SESSION['user'] = $userId;
+					$userinfo['userID'] = $user[0];
+					$userinfo['userRole'] = $user[1];
+					$_SESSION['user'] = $userinfo;
 					header('location:/backend');
 
 				}

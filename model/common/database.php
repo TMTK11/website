@@ -69,6 +69,16 @@ class Database{
 	
 	}
 
+	public function changeSettings($id,$firstname,$lastname,$email)
+	{
+		
+		
+	}
+
+
+
+
+
 	public function insert($query)
 	{
 		

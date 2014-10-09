@@ -22,7 +22,7 @@ class backendController{
 
 	public function getHTML(){
 
-	$data = $this->model->getUserInfo($_SESSION['user']);
+	$data = $this->model->getUserInfo($_SESSION['user']['userID']);
 
 
 	switch($this->url[1]){
@@ -86,7 +86,7 @@ class backendController{
 
 	public function checkuser()
 	{
-		if(!$_SESSION['user']){
+		if(!$_SESSION['user']['userID']){
 			header('location:/home');
 		}
 	}

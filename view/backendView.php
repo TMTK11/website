@@ -180,7 +180,7 @@ class backendView{
 									<li class=\"divider\"></li>
 									<li><a tabindex=\"-1\" class=\"visible-phone\" href=\"home\">Settings</a></li>
 									<li class=\"divider visible-phone\"></li>
-									<li><a tabindex=\"-1\" href=\"sign-in.html\">Logout</a></li>
+									<li><a tabindex=\"-1\" href=\"/controller/common/logout.php\">Logout</a></li>
 								</ul>
 							</li>
 							
@@ -328,32 +328,26 @@ class backendView{
 <div class=\"well\">
     <ul class=\"nav nav-tabs\">
       <li class=\"active\"><a href=\"#home\" data-toggle=\"tab\">Profile</a></li>
-      <li><a href=\"#profile\" data-toggle=\"tab\">Password</a></li>
+  
     </ul>
     <div id=\"myTabContent\" class=\"tab-content\">
       <div class=\"tab-pane active in\" id=\"home\">
-    <form id=\"tab\">
+    <form id=\"tab\" method=\"POST\" action=\"/controller/common/changesettings.php\">
        
         <label>First Name</label>
-        <input type=\"text\" value=\"".$user['firstname']."\" class=\"input-xlarge\">
+        <input type=\"text\" value=\"".$user['firstname']."\" name=\" firstname\" class=\"input-xlarge\">
         <label>Last Name</label>
-        <input type=\"text\" value=\"".$user['lastname']."\" class=\"input-xlarge\">
+        <input type=\"text\" value=\"".$user['lastname']."\" name=\" lastname\"class=\"input-xlarge\">
         <label>Email</label>
-        <input type=\"text\" value=\"".$user['email']."\" class=\"input-xlarge\">
+        <input type=\"text\" value=\"".$user['email']."\" name=\" email\" class=\"input-xlarge\">
+        <label>New Password</label>
+        <input type=\"password\"  name=\" password\" class=\"input-xlarge\">
         <div>
         <input type=\"submit\" class=\"btn btn-primary\" value=\"save\">
         </div>
     </form>
       </div>
-      <div class=\"tab-pane fade\" id=\"profile\">
-    <form id=\"tab2\">
-        <label>New Password</label>
-        <input type=\"password\" class=\"input-xlarge\">
-        <div>
-             <input type=\"submit\" class=\"btn btn-primary\" value=\"Update\">
-        </div>
-    </form>
-      </div>
+
   </div>
 
 </div>
@@ -382,9 +376,8 @@ class backendView{
     </form>
       </div>
       <div class=\"tab-pane fade\" id=\"profile\">
-    <form id=\"tab2\">
-        <label>New Password</label>
-        <input type=\"password\" class=\"input-xlarge\">
+    <form id=\"tab2\" method=\"POST\" action=\"/controller/common/changesettings.php\">
+
         <div>
             <button class=\"btn btn-primary\">Update</button>
         </div>

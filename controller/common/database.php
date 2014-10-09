@@ -34,10 +34,11 @@ class Database{
 		if($this->stmt->rowCount() > 0)
 		{
 			
-		
+			$data = array();
 			while($result = $this->stmt->fetch(PDO::FETCH_ASSOC))
 			{
-				$data = $result['id'];
+				$data[] = $result['id'];
+				$data[] = $result['role'];
 			}
 			
 			return ($data);
@@ -67,6 +68,18 @@ class Database{
 
 		}
 	
+	}
+	public function changeSettings($id,$firstname,$lastname,$email,$password)
+	{
+		$sql = "UPDATE `users` SET `firstname`='$firstname',`lastname`='$lastname',`email`='$email',`password`='$password' WHERE `id`='$id'";
+		$this->stmt = $this->PDO->prepare($sql);
+		$this->stmt->execute();
+		if($this->stmt->rowCount())
+		{
+		return(true);
+		}else{
+			return(false);
+		}
 	}
 
 	public function insert($query)
