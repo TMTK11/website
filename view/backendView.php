@@ -1,5 +1,4 @@
      <?php
-require_once('/controller/backendController.php');
 
 class backendView{
 	
@@ -108,10 +107,9 @@ class backendView{
 		");
 	}
 	
-	public function getHeader($page,$user){
+	public function getHeader($page){
 
 		return("
-
 			<!DOCTYPE html>
 			<html lang=\"en\">
 			<head>
@@ -171,7 +169,7 @@ class backendView{
 							<li><a href=\"/backend/settings\" class=\"hidden-phone visible-tablet visible-desktop\" role=\"button\">Settings</a></li>
 							<li id=\"fat-menu\" class=\"dropdown\">
 								<a href=\"#\" role=\"button\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
-									<i class=\"icon-user\"></i> ".$user['firstname']."
+									<i class=\"icon-user\"></i> Jack Smith
 									<i class=\"icon-caret-down\"></i>
 								</a>
 
@@ -316,7 +314,7 @@ class backendView{
 		");
 	}
 	
-	function getSettings($user){
+	function getSettings(){
 		return("
 		
 		<div class=\"btn-toolbar\">
@@ -333,16 +331,21 @@ class backendView{
     <div id=\"myTabContent\" class=\"tab-content\">
       <div class=\"tab-pane active in\" id=\"home\">
     <form id=\"tab\">
-       
+        <label>Username</label>
+        <input type=\"text\" value=\"jsmith\" class=\"input-xlarge\">
         <label>First Name</label>
-        <input type=\"text\" value=\"".$user['firstname']."\" class=\"input-xlarge\">
+        <input type=\"text\" value=\"John\" class=\"input-xlarge\">
         <label>Last Name</label>
-        <input type=\"text\" value=\"".$user['lastname']."\" class=\"input-xlarge\">
+        <input type=\"text\" value=\"Smith\" class=\"input-xlarge\">
         <label>Email</label>
-        <input type=\"text\" value=\"".$user['email']."\" class=\"input-xlarge\">
-        <div>
-        <input type=\"submit\" class=\"btn btn-primary\" value=\"save\">
-        </div>
+        <input type=\"text\" value=\"jsmith@yourcompany.com\" class=\"input-xlarge\">
+        <label>Address</label>
+        <textarea value=\"Smith\" rows=\"3\" class=\"input-xlarge\">
+2817 S 49th
+Apt 314
+San Jose, CA 95101
+        </textarea>
+
     </form>
       </div>
       <div class=\"tab-pane fade\" id=\"profile\">
@@ -350,7 +353,7 @@ class backendView{
         <label>New Password</label>
         <input type=\"password\" class=\"input-xlarge\">
         <div>
-             <input type=\"submit\" class=\"btn btn-primary\" value=\"Update\">
+            <button class=\"btn btn-primary\">Update</button>
         </div>
     </form>
       </div>

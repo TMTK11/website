@@ -1,7 +1,7 @@
 <?php
 require_once('/controller/common/database.php');
 
-class BackendModel{
+class backendModel{
 	protected $db;
 
 	protected $file;
@@ -22,7 +22,7 @@ class BackendModel{
 		$this->db = new database();
 		$this->file = $file;
 		$this->temp = $file['tmp_name'];
-
+		$this->info = getimagesize($this->temp);
 	}
 	
 	public function createThumbnail($width, $height){

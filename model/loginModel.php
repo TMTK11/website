@@ -1,6 +1,6 @@
 <?php
 require_once('/../controller/common/database.php');
-class UserModel{
+class loginModel{
 
 	protected $db;
 
