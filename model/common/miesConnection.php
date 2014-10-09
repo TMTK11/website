@@ -1,6 +1,6 @@
 <?php
 
-class miesConnection extends PDO{
+class MiesConnection extends PDO{
 
 	const db_server   = "145.118.4.13";
 	const db_username = "tmtk-11";

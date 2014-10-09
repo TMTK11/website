@@ -1,8 +1,7 @@
 <?php
 
-require_once("/model/layoutModel.php");
-require_once("/view/layoutView.php");
-require_once(DS . 'model' . DS . 'controllerModel.php');
+require_once(DS . "model" . DS . "layoutModel.php");
+require_once(DS . "view"  . DS . "layoutView.php");
 
 class LayoutController{
 	

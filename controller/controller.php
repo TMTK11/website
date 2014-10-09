@@ -3,6 +3,10 @@
 error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 
 require_once(DS . 'controller' . DS . 'errorController.php');
+require_once(DS . "model" . DS . "controllerModel.php");
+
+if(!isset($_SESSION[userRole]))
+	$_SESSION[userRole] = 'guest';
 
 class Controller{
 	
@@ -10,10 +14,14 @@ class Controller{
 	private $url;				//Requested URL, cleaned and in array
 	private $state;				//Current state of the controller
 	private $pageController;	//The pagecontroller as requested by user
+	private $activeControllers;
+	private $database;
 
 	//Constructor
 	public function __construct($url){
 		
+		$this->database = new ControllerModel();
+		$this->activeControllers = $this->database->getActiveControllers();
 		$this->url = $url;
 	}
 
@@ -31,8 +39,10 @@ class Controller{
 		unset($controllers['0']); //Removes .
 		unset($controllers['1']); //Removes ..
 				
-		//Check if specified controller exists
-		if(in_array($type . "Controller.php", $controllers)){
+		if(!in_array(strtolower($type), $this->activeControllers)){
+			//THROW INACTIVE ERROR PARTY
+			$this->state = "CONTROLLER_INACTIVE";
+		}elseif(in_array(strtolower($type) . "Controller.php", $controllers)){
 			
 			//Get and create controller
 			require_once($type . "Controller.php");
@@ -46,7 +56,7 @@ class Controller{
 		}else{
 
 			//Set the state for the master controller
-			$this->state = "NOT_EXIST";
+			$this->state = "CONTROLLER_NOT_FOUND";
 
 		}
 
@@ -54,22 +64,34 @@ class Controller{
 
 	//HTML output
 	public function getHTML(){
+		switch ($this->state) {
+			case 'DONE':
+				
+				//Gets HTML from pagecontroller and return it to index.php
+				$html = $this->pageController->getHTML();
+				return($html);
+				break;
 
-		//Check for state
-		if("DONE" == $this->state){
-			
-			//Gets HTML from pagecontroller and return it to index.php
-			$html = $this->pageController->getHTML();
-			
-			return($html);
-		}else{
+			case 'CONTROLLER_INACTIVE':
+				
+				//Get errorpage from errorcontroller
+				$errorController = new errorController(array("title" => "Inactief!", "message"=>"Pagina is niet (meer) actief" ));
+				return($errorController->getHTML());
 
-			//Get errorpage from errorcontroller
-			$errorController = new errorController(array("title" => "Fout!", "message"=>"Pagina kon niet worden gevonden" ));
+			case 'CONTROLLER_NOT_FOUND':
 
-			return($errorController->getHTML());
+				//Get errorpage from errorcontroller
+				$errorController = new errorController(array("title" => "Kritieke fout!", "message"=>"Fout tijdens het laden van de pagina. Neem contact op met de eigenaar van deze pagina." ));
+				return($errorController->getHTML());
+
+			default:
+				
+				//Get errorpage from errorcontroller
+				$errorController = new errorController(array("title" => "Fout!", "message"=>"Een onbekende fout heeft zich voorgedaan. Probeer het opnieuw." ));
+				return($errorController->getHTML());
+
+				break;
 		}
-
 	}
 }
 

@@ -2,7 +2,7 @@
 
 require_once(DS . 'model' . DS . 'common' . DS . 'miesConnection.php');
 
-class LayoutModel extends miesConnection{
+class LayoutModel extends MiesConnection{
 
 	function __construct(){
 
@@ -16,13 +16,12 @@ class LayoutModel extends miesConnection{
 	public function getMenuOptions(){
 
 		$query = "SELECT * FROM pages WHERE active = true";
-
 		$result = parent::query($query);
 
 		foreach($result as $pageLink){
 
-
-			$menuOptions[$pageLink['title']] = $pageLink['type'];
+			if($_SESSION['userRole'] == 'admin' || !$pageLink['admin'])
+				$menuOptions[$pageLink['title']] = $pageLink['type'];
 		}
 		/*
 		$menuOptions = array("Home"=>"/home/", "Michaels Blog"=>"/blog/michael/", "contact"=>"/contact/");
