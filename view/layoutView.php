@@ -19,7 +19,7 @@ class LayoutView{
 
 	public function getHTML(){
 		//check login
-		$form = $this->checkuser();
+	
 		//Create menu
 		$navMenu = "<ul id=\"menu\">";
 		foreach($this->menuOptions as $key => $value) {
