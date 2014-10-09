@@ -9,24 +9,15 @@ class LayoutModel extends MiesConnection{
 		parent::__construct();
 	}
 
-	public function getAllPages(){
-
-	}
-
 	public function getMenuOptions(){
 
 		$query = "SELECT * FROM `pages` WHERE active = true ORDER BY `order`, `id`";
-
-		print($query);
-
 		$result = parent::query($query);
 
 		foreach($result as $pageLink)
-			if($_SESSION['user']['userRole'] == 'Admin' || !$pageLink['admin'])
-				$menuOptions[$pageLink['title']] = '/' . $pageLink['type'] . '/';
+			if($_SESSION['user']['userRole'] == 'Admin' || !$pageLink['admin']) //If session is Admin OR the page is not admin only, make link 
+				$menuOptions[$pageLink['title']] = '/' . $pageLink['type'] . '/'; //Array key is display title, value is link
 		
 		return($menuOptions);
 	}
 }
-
-?>

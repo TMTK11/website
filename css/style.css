@@ -212,8 +212,8 @@ body {
 }
 
 #formlogin{
-width:400px;
-float:right;
-margin-top:15px;
-
+	
+	width:400px;
+	float:right;
+	margin-top:15px;
 }

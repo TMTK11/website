@@ -14,9 +14,8 @@ class ControllerModel extends MiesConnection{
 		$query = "SELECT DISTINCT type FROM pages WHERE active = true";
 		$result = parent::query($query);
 
-		foreach($result as $type){
-			$types[] = $type['type'];
-		}
+		foreach($result as $type)
+			$types[] = $type['type']; //Remove labels from array for easy in_array.
 
 		return($types);
 	}

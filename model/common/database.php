@@ -15,6 +15,10 @@ class Database{
 		$this->PDO = new PDO("mysql:host=".$this->host.";dbname=".$this->dbName.";",$this->dbUsername,$this->dbPassword);
 	}
 
+	/*
+	Used in example only. Could be removed for release. 
+	Leave here for Github
+	*/
 	public function getExampleData(){
 		
 		$array	 =	array(
