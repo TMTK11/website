@@ -1,6 +1,8 @@
 <?php
 
-require_once("/controller/errorController.php");
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+
+require_once(DS . 'controller' . DS . 'errorController.php');
 
 class Controller{
 	
