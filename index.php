@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 //Some basic definitions
 define("DS", DIRECTORY_SEPARATOR);
 define("ROOT", dirname(__FILE__));

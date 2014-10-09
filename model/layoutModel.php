@@ -18,16 +18,10 @@ class LayoutModel extends MiesConnection{
 		$query = "SELECT * FROM pages WHERE active = true";
 		$result = parent::query($query);
 
-		foreach($result as $pageLink){
-
-			if($_SESSION['userRole'] == 'admin' || !$pageLink['admin'])
-				$menuOptions[$pageLink['title']] = $pageLink['type'];
-		}
-		/*
-		$menuOptions = array("Home"=>"/home/", "Michaels Blog"=>"/blog/michael/", "contact"=>"/contact/");
+		foreach($result as $pageLink)
+			if($_SESSION['user']['userRole'] == 'Admin' || !$pageLink['admin'])
+				$menuOptions[$pageLink['title']] = '/' . $pageLink['type'] . '/';
 		
-		return($menuOptions);
-		*/
 		return($menuOptions);
 	}
 }
