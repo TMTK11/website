@@ -28,7 +28,7 @@ class HomeController{
 		
 		if($this->url[1] == 'login'  && $this->loginResult){
 
-					$message	 =	"<h1>Home</h1>";
+			$message	 ="<h1>Home</h1>";
 			$message	.=	"<p>Welkom op de pagina voor TMTK1-11. Hier maken wij ons MVC CMS.</p>";
 			$title		 =	"Home ";
 			
