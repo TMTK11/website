@@ -106,7 +106,7 @@ class LayoutView{
 		}else{
 
 			$html = "
-				<form id='formlogin' method='POST' action='/controller/common/checkLogin.php'>
+				<form id='formlogin' method='POST' action='/home/login'>
 				<input type='text' name='username' placeholder='E-mail'/>
 				<input type='password' name='password' placeholder='Password'/>
 				<input type='submit' name='checklogin' value='Login'/>

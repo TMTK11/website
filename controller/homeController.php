@@ -1,18 +1,24 @@
 <?php
 
 require_once("/controller/layoutController.php");
+require_once( ROOT. DS . "model" . DS ."UserModel.php");
 
 class HomeController{
 	
 	private $url;
+	private $state;
+	private $db;
 
 	function __construct($url){
 
+		$this->db = new UserModel();
 		$this->url = $url;
 
 		if($url[1] == 'login'){
-			//Login
-			
+	
+			$result = $this->db->checkUser($_POST['username'],hash("sha256",$_POST['password']));
+
+			$this->loginResult = $result;
 		}
 
 		return(true);
@@ -20,13 +26,21 @@ class HomeController{
 	
 	public function getHTML(){
 		
-		if($url[1] == login  && $loginsucces){
+		if($this->url[1] == 'login'  && $this->loginResult){
 
-			$hmtl = "login succesvol"; 
+					$message	 =	"<h1>Home</h1>";
+			$message	.=	"<p>Welkom op de pagina voor TMTK1-11. Hier maken wij ons MVC CMS.</p>";
+			$title		 =	"Home ";
+			
+			$details = array("contentLeft"=>$message, "title"=>$title);
+			
+			$layout	 =	new LayoutController($details);
+			
+			$html = $layout->getHTML();
 
-		}elseif($url[1] == login  && !$loginsucces){
+		}elseif($this->url[1] == 'login'  && !$this->loginResult){
 		
-			$errorController = new errorController(array("title" => "Foute inlog!", "message"=>"Verkeerde gebruikersnaam of wachtwoord." ));
+			$errorController = new errorController(array("title" => "Foute login!", "message"=>"Verkeerde gebruikersnaam of wachtwoord." ));
 			$html = $errorController->getHTML();
 		
 		}else{
@@ -41,6 +55,7 @@ class HomeController{
 			
 			$html = $layout->getHTML();
 		}
+		
 		return($html);
 	}
 }

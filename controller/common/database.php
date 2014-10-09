@@ -2,12 +2,12 @@
 
 class Database{
 
-	protected $PDO;
-	public $stmt;
-	private $host = "145.118.4.13";
-	private $dbName ="dbtmtk_11";
-	private $dbUsername = "tmtk-11";
-	private $dbPassword= "ySAbNX";
+	private $PDO;
+	private $stmt;
+	protected $host = "145.118.4.13";
+	protected $dbName ="dbtmtk_11";
+	protected $dbUsername = "tmtk-11";
+	protected $dbPassword= "ySAbNX";
 
 
 	public function __construct()
@@ -34,14 +34,17 @@ class Database{
 		if($this->stmt->rowCount() > 0)
 		{
 			
-			$data = array();
+			$userinfo = array();
 			while($result = $this->stmt->fetch(PDO::FETCH_ASSOC))
 			{
 				$data[] = $result['id'];
 				$data[] = $result['role'];
 			}
+			$userinfo['userID'] =   $data[0];
+			$userinfo['userRole'] = $data[1];
+			$_SESSION['user'] = $userinfo;
 			
-			return ($data);
+			return (true);
 
 		}
 		else
