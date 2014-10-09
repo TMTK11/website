@@ -95,26 +95,7 @@ class LayoutView{
 		return($html);
 	}
 
-	public function checkuser()
-	{
-		if(isset($_SESSION['user']))
-		{
-				$html = "<a href='/controller/common/logout.php'>Logout</a>";
-
-			return $html;
-			
-		}else{
-
-			$html = "
-				<form id='formlogin' method='POST' action='/home/login'>
-				<input type='text' name='username' placeholder='E-mail'/>
-				<input type='password' name='password' placeholder='Password'/>
-				<input type='submit' name='checklogin' value='Login'/>
-				</form>";
-
-			return $html;
-		}
-	}
+	
 
 
 
