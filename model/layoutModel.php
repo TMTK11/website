@@ -15,7 +15,10 @@ class LayoutModel extends MiesConnection{
 
 	public function getMenuOptions(){
 
-		$query = "SELECT * FROM pages WHERE active = true";
+		$query = "SELECT * FROM `pages` WHERE active = true ORDER BY `order`, `id`";
+
+		print($query);
+
 		$result = parent::query($query);
 
 		foreach($result as $pageLink)
