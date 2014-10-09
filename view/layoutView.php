@@ -99,22 +99,7 @@ class LayoutView{
 		return($html);
 	}
 
-	public function checkuser()
-	{
-		if(isset($_SESSION['user']))
-		{
-				$html = "<a href='/controller/common/logout.php'>Logout</a>";
 
-			return $html;
-			
-		}else{
-
-			$html = "
-				";
-
-			return $html;
-		}
-	}
 
 
 
