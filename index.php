@@ -18,9 +18,8 @@ $urlArray	 =	array();
 $urlArray	 =	explode('/', $url);
 
 //Clean up array
-if($urlArray[0] == '' || empty($urlArray[0])){
+if($urlArray[0] == '' || empty($urlArray[0]))
 	array_shift($urlArray);
-}
 
 //Create controller
 $controller = new controller($urlArray);

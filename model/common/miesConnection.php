@@ -19,12 +19,12 @@ class MiesConnection extends PDO{
 	}
 
 	public function query($query){
-        $args = func_get_args();
+        $args 	 = func_get_args();
         array_shift($args);
 
         $reponse = parent::prepare($query);
         $reponse->execute();
-        $result = $reponse->fetchAll(PDO::FETCH_ASSOC);
+        $result	 = $reponse->fetchAll(PDO::FETCH_ASSOC);
 
         return $result;
     }
