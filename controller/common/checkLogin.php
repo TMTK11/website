@@ -21,8 +21,8 @@ $check = new UserModel();
 				}
 				else
 				{
-				
-					header('location:/home/msg/verkeerd');
+					$errorController = new errorController(array("title" => "Foute inlog!", "message"=>"Verkeerde gebruikersnaam of wachtwoord." ));
+					return($errorController->getHTML());
 				}
 
 			
