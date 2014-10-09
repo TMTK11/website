@@ -19,7 +19,7 @@ class LayoutView{
 
 	public function getHTML(){
 		//check login
-	
+		$form = $this->checkuser();
 		//Create menu
 		$navMenu = "<ul id=\"menu\">";
 		foreach($this->menuOptions as $key => $value) {
@@ -50,8 +50,12 @@ class LayoutView{
 		<div id=\"edit-wrapper\">
 			
 			<div id=\"edit\">
-	
-				".$form."
+			<form id='formlogin' method='POST' action='/home/login'>
+				<input type='text' name='username' placeholder='E-mail'/>
+				<input type='password' name='password' placeholder='Password'/>
+				<input type='submit' name='checklogin' value='Login'/>
+				</form>
+			
 			</div>
 
 		</div>	
@@ -95,7 +99,22 @@ class LayoutView{
 		return($html);
 	}
 
-	
+	public function checkuser()
+	{
+		if(isset($_SESSION['user']))
+		{
+				$html = "<a href='/controller/common/logout.php'>Logout</a>";
+
+			return $html;
+			
+		}else{
+
+			$html = "
+				";
+
+			return $html;
+		}
+	}
 
 
 
