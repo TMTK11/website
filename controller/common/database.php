@@ -85,6 +85,33 @@ class Database{
 		}
 	}
 
+	public function addPost($title,$message)
+	{
+		$sql = "INSERT INTO `blog`(`id`, `Title`, `message`, `time`) VALUES (null,'$title','$message',null) ";
+		$this->stmt = $this->PDO->prepare($sql);
+		$this->stmt->execute();
+		if($this->stmt->rowCount())
+		{
+		return(true);
+		}else{
+			return(false);
+		}
+	}
+	
+	public function getPost()
+	{
+		$sql = "SELECT * FROM `blog` ";
+		$this->stmt = $this->PDO->prepare($sql);
+		$this->stmt->execute();
+		if($this->stmt->rowCount())
+		{
+			$data = $this->stmt->fetch(PDO::FETCH_ASSOC);
+		return($data);
+		}else{
+			return(false);
+		}
+	}
+
 	public function insert($query)
 	{
 		

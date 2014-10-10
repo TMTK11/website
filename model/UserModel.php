@@ -19,6 +19,18 @@ class UserModel{
 		return ($this->db->changeSettings($id,$firstname,$lastname,$email,$password));
 	}
 
+	public function BlogPost($title,$message){
+
+		return($this->db->addPost($title,$message));
+
+	}
+	public function getPost(){
+
+		return($this->db->getPost());
+
+	}
+	
+
 
 }
 

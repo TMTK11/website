@@ -48,6 +48,7 @@ class LayoutView{
 		<!-- Scripts -->
 		<script src=\"/scripts/jquery.js\"></script>
 		
+
 	</head>
 
 	<body>

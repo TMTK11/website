@@ -250,12 +250,42 @@ margin-left:5px;
 
 
 }
+.widget textarea{
+	resize:none;
+	height:200px;
+	width:300px;
+
+	color:grey;
+
+}
 #blog-message{
 	margin:auto;
 	#background-color:red;
 	width:500px;
-	min-height:200px;
+	min-height:50px;
 	height:auto;
 	margin-top:10px;
 	word-break: break-all;
+}
+input[name='title']{
+	width:300px;
+	height:35px;
+	padding-left:5px;
+	font-size:20px;
+	color:grey;
+
+}
+input[name='postMessage']{
+	width:70px;
+	height:30px;
+	font-size:18px;
+	color:white;
+	border:none;
+	background-color:#A0D0F2;
+	float:right;
+	margin-top:2px;
+
+}
+.text{
+	margin-top:15px;
 }

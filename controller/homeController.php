@@ -7,16 +7,16 @@ class HomeController{
 	
 	private $url;
 	private $state;
-	private $db;
+	private $usermodel;
 
 	function __construct($url){
 
-		$this->db = new UserModel();
+		$this->usermodel = new UserModel();
 		$this->url = $url;
 
 		if($url[1] == 'login'){
 	
-			$result = $this->db->checkUser($_POST['username'],hash("sha256",$_POST['password']));
+			$result = $this->usermodel->checkUser($_POST['username'],hash("sha256",$_POST['password']));
 
 			$this->loginResult = $result;
 		}

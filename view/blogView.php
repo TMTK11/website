@@ -14,7 +14,12 @@ class BlogView{
 	public function getHTML(){
 		$title = $this->details['title'];
 
-		$content = "
+		$content = "<!-- CONTENT-LEFT -->
+			<div id=\"content-left\">
+		
+
+	
+			
 		<div id='blog-container'>
 		<div id='blog-post'>
 		<div id='blog-title'><h1>Test post</h1></div>
@@ -30,6 +35,26 @@ class BlogView{
 		</div>
 		<div style='clear:both;'></div>
 		</div>
+		</div>
+			
+			<!-- CONTENT-RIGHT -->
+			<div id=\"content-right\">
+				<div class=\"widget\">
+					<form method='POST' action='/blog/upload'>
+			
+					<span>Titel</span>
+				
+					<input type='text' name='title'>
+					<div class='text'>
+					<span>Message</span>
+					<textarea name='editor1' id='editor1'>
+
+				   </textarea>
+					</div>
+					<input type='submit' name='postMessage'value='Post'>
+					</form>
+				</div>
+			</div>
 
 		";
 
