@@ -217,3 +217,45 @@ body {
 	float:right;
 	margin-top:15px;
 }
+#blog-container{
+
+	#background-color:blue;
+	width:500px;
+	min-height:400px;
+	height:auto;
+	float:left;
+}
+
+#blog-post{
+	margin:auto;
+	#background-color:red;
+	width:500px;
+	min-height:200px;
+	height:auto;
+	margin-top:10px;
+}
+#blog-title{
+	margin:auto;
+	#background-color:green;
+	width:500px;
+	min-height:50px;
+	
+	
+}
+
+#blog-title h1 {
+color:black;
+font-size:35px;
+margin-left:5px;
+
+
+}
+#blog-message{
+	margin:auto;
+	#background-color:red;
+	width:500px;
+	min-height:200px;
+	height:auto;
+	margin-top:10px;
+	word-break: break-all;
+}
