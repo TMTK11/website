@@ -100,12 +100,17 @@ class Database{
 	
 	public function getPost()
 	{
-		$sql = "SELECT * FROM `blog` ";
+		$sql = "SELECT * FROM `blog` ORDER BY `id` DESC ";
 		$this->stmt = $this->PDO->prepare($sql);
 		$this->stmt->execute();
 		if($this->stmt->rowCount())
 		{
-			$data = $this->stmt->fetch(PDO::FETCH_ASSOC);
+			$data = array();
+			while($result = $this->stmt->fetchAll(PDO::FETCH_ASSOC))
+			{
+				$data = $result;
+			}
+
 		return($data);
 		}else{
 			return(false);

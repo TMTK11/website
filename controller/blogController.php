@@ -16,15 +16,17 @@ class BlogController{
 	public function __construct($url){
 
 		$this->url = $url;
-
+		$this->userModel = new UserModel();
 	if($url[1] == 'upload'){
 
 
 		
-			$this->userModel = new UserModel();
-			if($_POST['title'] AND $_POST['editor1'] != '')
+			
+			if($_POST['editor1'] && $_POST['title']  == true)
 			{
-				$data = $this->userModel->BlogPost($_POST['title'],$_POST['editor1']);
+				$data = $this->userModel->BlogPost($_POST['title'],htmlentities($_POST['editor1']));
+			
+				
 				if($data)
 					header('location:/blog');
 			}else{
@@ -39,9 +41,9 @@ class BlogController{
 
 	public function getHTML(){
 
-		$data = $this->userModel->getPost();
-		print_r($data);
-		$blogView =	new blogView(array("title"=>"Contact"));
+			$data = $this->userModel->getPost();
+	
+		$blogView =	new blogView(array("title"=>"Blog"),$data);
 		$html		 =	$blogView->getHTML();
 
 		return($html);
