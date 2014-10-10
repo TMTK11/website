@@ -1,7 +1,8 @@
 <?php
 
-require_once("/model/contactModel.php");
-require_once("/view/contactView.php");
+require_once(DS . "model" . DS . "contactModel.php");
+require_once(DS . "view" . DS . "contactView.php");
+require_once(DS . "model" . DS . "pageModel.php");
 
 class ContactController{
 
