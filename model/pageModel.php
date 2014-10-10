@@ -8,10 +8,12 @@ class PageModel extends MiesConnection{
 
 		parent::__construct();
 	}
+	
 	/*
 		Insert new page
 	*/
 	public function createPage($pageName, $type){
+		
 		$query = "INSERT INTO pages (`title`, `type`)VALUES('$pageName', '$type')";
 		$result = parent::query($query);
 
@@ -22,19 +24,24 @@ class PageModel extends MiesConnection{
 		Update page
 	*/
 	public function updatePage($pageID, $variables){
+		
 		if(empty($variables) || !is_array($variables)){
+			
 			trigger_error("variables must be in array (field, value)", E_WARNING);
 			return(false);
 		}
 		
-		foreach ($variables as $key => $value) {
+		foreach ($variables as $key => $value)
 			$values[] = "`" . $key . "`='" . $value . "'";
-		}
+
 		$query = "UPDATE pages SET " . implode(", ", $values) . " WHERE 1;";
+		
 		try{
+		
 			$result = PDO::prepare($query);
 			$result = $result->execute();
 		}catch (Exception $e) {
+		
 			trigger_error("Variables where wrong. Update query not excecuted properly.", E_WARNING);
 			return(false);
 		}
