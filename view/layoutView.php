@@ -4,7 +4,6 @@ class LayoutView{
 	
 	private $title;
 	private $menuOptions;
-	private $fullWidth = false;
 	
 	public function __construct($content){
 		
@@ -14,17 +13,13 @@ class LayoutView{
 		
 		//Save as object variable
 		$this->content		 = $content;
-		
-		if (!isset($this->content['contentRight'])){
-			$this->fullWidth = true;
-		}
-		
+
 		return(true);
 	}
 
 	public function getHTML(){
 		//check login
-		
+	
 		//Create menu
 		$navMenu = "<ul id=\"menu\">";
 		foreach($this->menuOptions as $key => $value) {
@@ -72,9 +67,24 @@ class LayoutView{
 			" . $navMenu . "
 		</div>
 		
+		
 		<!-- CONTENT -->
 		<div id=\"content\">
+			
+			<!-- CONTENT-LEFT -->
+			<div id=\"content-left\">
 				" . $this->content['contentLeft'] . "
+
+	
+			</div>
+			
+			<!-- CONTENT-RIGHT -->
+			<div id=\"content-right\">
+				<div class=\"widget\">
+					<h1>Weerbericht</h1>
+					<p>Hier het weerbericht ofzo. <br/> Widgets zouden ook modulair kunnen</p>
+				</div>
+			</div>
 		</div>
 
 		<!-- FOOTER -->
